@@ -3,6 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Responsive Landing Page</title>
+  <style>
+    body { margin:0; font-family: Arial, sans-serif; }
+    header { background:#333; color:#fff; padding:1rem; }
+    nav ul { list-style:none; margin:0; padding:0; display:flex; }
+    nav li { margin-right:1rem; }
+    nav a { color:#fff; text-decoration:none; }
+    nav a:hover { text-decoration:underline; }
+
+    .hero {
+      background:#4a90e2; color:#fff; text-align:center;
+      padding:4rem 2rem;
+    }
+    .hero h1 { margin:0; font-size:2.5rem; }
+    .hero p { font-size:1.2rem; }
+
+    .services { display:flex; flex-wrap:wrap; padding:2rem; }
+    .service {
+      flex:1 1 250px; margin:1rem; padding:1rem;
+      border:1px solid #ccc; border-radius:8px;
+    }
+    .service h2 { margin-top:0; }
+
+    .testimonials { background:#f9f9f9; padding:2rem; }
+    .testimonial {
+      margin:1rem 0; padding:1rem; border-left:4px solid #4a90e2;
+    }
+
+    .contact { padding:2rem; }
+    form { max-width:400px; margin:auto; display:flex; flex-direction:column; }
+    label { margin-top:1rem; }
+    input, textarea { padding:.5rem; margin-top:.25rem; }
+    button { margin-top:1rem; padding:.75rem; background:#4a90e2; color:#fff; border:none; cursor:pointer; }
+    button:hover { background:#357ab8; }
+
+    footer { background:#333; color:#fff; text-align:center; padding:1rem; }
+    @media (max-width:600px) {
+      nav ul { flex-direction:column; }
+      .services { flex-direction:column; }
+    }
+  </style>
 </head>
 <body>
   <header>
