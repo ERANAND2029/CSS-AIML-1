@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NCC Recruitment Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --bg: #f7f9fc; --card: #ffffff; --text: #1f2937; --muted: #6b7280; --accent: #2563eb; --danger: #dc2626;
+    }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; background: var(--bg); color: var(--text); }
+    header, footer { padding: 1rem 1.25rem; background: #eef2ff; }
+    header h1 { margin: 0 0 .25rem; font-size: 1.5rem; }
+    main { max-width: 840px; margin: 1rem auto; padding: 0 1rem; }
+    form { background: var(--card); padding: 1rem; border-radius: .75rem; box-shadow: 0 2px 8px rgba(0,0,0,.06); }
+    fieldset { border: 1px solid #e5e7eb; border-radius: .5rem; margin: 1rem 0; padding: .75rem 1rem; }
+    legend { font-weight: 600; padding: 0 .5rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .75rem .75rem; }
+    label { display: block; font-size: .9rem; margin-bottom: .25rem; color: var(--muted); }
+    input, select, textarea { width: 100%; padding: .55rem .6rem; border: 1px solid #d1d5db; border-radius: .5rem; font-size: .95rem; }
+    input[type="date"] { padding: .45rem .6rem; }
+    textarea { min-height: 90px; }
+    .inline { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; }
+    .hint { font-size: .8rem; color: var(--muted); }
+    .req::after { content: " *"; color: var(--danger); }
+    .actions { display: flex; gap: .75rem; margin-top: .75rem; }
+    button { padding: .6rem .9rem; border: none; border-radius: .5rem; cursor: pointer; font-weight: 600; }
+    .primary { background: var(--accent); color: #fff; }
+    .secondary { background: #e5e7eb; }
+    .note { font-size: .85rem; color: var(--muted); margin-top: .5rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NCC Recruitment Form</h1>
+    <p class="hint">Fill in accurate details. Fields marked with * are mandatory.</p>
+  </header>
+
+  <main>
+    <form action="/submit-ncc" method="post" enctype="multipart/form-data" novalidate aria-describedby="formHelp">
+      <p id="formHelp" class="hint">Your information will be used for NCC unit screening and communication.</p>
+
+      <fieldset>
+        <legend>Personal details</legend>
+        <div class="grid">
+          <div>
+            <label for="fname" class="req">Full name</label>
+            <input type="text" id="fname" name="full_name" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="father" class="req">Father/Guardian name</label>
+            <input type="text" id="father" name="guardian_name" required>
+          </div>
+          <div>
+            <label for="dob" class="req">Date of birth</label>
+            <input type="date" id="dob" name="dob" required>
+          </div>
+          <div>
+            <label for="gender" class="req">Gender</label>
+            <select id="gender" name="gender" required>
+              <option value="">Select…</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+              <option>Prefer not to say</option>
+            </select>
+          </div>
+          <div>
+            <label for="nationality" class="req">Nationality</label>
+            <input type="text" id="nationality" name="nationality" required value="Indian">
+          </div>
+          <div>
+            <label for="blood">Blood group</label>
+            <select id="blood" name="blood_group">
+              <option value="">Select…</option>
+              <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+              <option>O+</option><option>O-</option><option>AB+</option><option>AB-</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contact information</legend>
+        <div class="grid">
+          <div>
+            <label for="email" class="req">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="phone" class="req">Mobile number</label>
+            <input type="tel" id="phone" name="phone" inputmode="numeric" pattern="[0-9]{10}" placeholder="10-digit" required>
+            <p class="hint">Enter a 10-digit mobile number.</p>
+          </div>
+          <div>
+            <label for="addr" class="req">Current address</label>
+            <textarea id="addr" name="address" required></textarea>
+          </div>
+          <div>
+            <label for="city" class="req">City</label>
+            <input type="text" id="city" name="city" required value="Delhi NCR">
+          </div>
+          <div>
+            <label for="pincode" class="req">PIN code</label>
+            <input type="text" id="pincode" name="pincode" inputmode="numeric" pattern="[0-9]{6}" placeholder="6-digit" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Education details</legend>
+        <div class="grid">
+          <div>
+            <label for="inst" class="req">Institution/College</label>
+            <input type="text" id="inst" name="institution" required>
+          </div>
+          <div>
+            <label for="program" class="req">Program</label>
+            <input type="text" id="program" name="program" required placeholder="e.g., B.Tech CSE (AI & ML)">
+          </div>
+          <div>
+            <label for="year" class="req">Current year/semester</label>
+            <select id="year" name="year" required>
+              <option value="">Select…</option>
+              <option>1st year</option><option>2nd year</option><option>3rd year</option><option>4th year</option>
+            </select>
+          </div>
+          <div>
+            <label for="marks10">Class 10 percentage</label>
+            <input type="text" id="marks10" name="marks_10" inputmode="decimal" placeholder="e.g., 88.6">
+          </div>
+          <div>
+            <label for="marks12">Class 12 percentage</label>
+            <input type="text" id="marks12" name="marks_12" inputmode="decimal" placeholder="e.g., 91.2">
+          </div>
+          <div>
+            <label for="idnum" class="req">Student ID/Roll no.</label>
+            <input type="text" id="idnum" name="student_id" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>NCC preferences</legend>
+        <div class="grid">
+          <div>
+            <label for="wing" class="req">Preferred wing</label>
+            <select id="wing" name="wing" required>
+              <option value="">Select…</option>
+              <option value="Army">Army (JD/JW)</option>
+              <option value="Air">Air</option>
+              <option value="Navy">Navy</option>
+            </select>
+          </div>
+          <div>
+            <label for="cert">Target certificate</label>
+            <select id="cert" name="certificate">
+              <option value="">Select…</option>
+              <option value="A">‘A’ Certificate</option>
+              <option value="B">‘B’ Certificate</option>
+              <option value="C">‘C’ Certificate</option>
+            </select>
+          </div>
+          <div>
+            <label for="exp">Prior NCC/Scouts experience</label>
+            <select id="exp" name="prior_exp">
+              <option value="No">No</option>
+              <option value="Yes">Yes</option>
+            </select>
+          </div>
+          <div>
+            <label for="sports">Sports/physical activities</label>
+            <input type="text" id="sports" name="sports" placeholder="e.g., Athletics, Football">
+          </div>
+          <div>
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" name="height" min="120" max="230" step="1">
+          </div>
+          <div>
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" name="weight" min="30" max="160" step="0.1">
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Medical & identification</legend>
+        <div class="grid">
+          <div>
+            <label for="medical" class="req">Medical fitness declaration</label>
+            <select id="medical" name="medical_fitness" required>
+              <option value="">Select…</option>
+              <option value="Fit">Fit</option>
+              <option value="Under treatment">Under treatment</option>
+            </select>
+          </div>
+          <div>
+            <label for="aadhar" class="req">Aadhaar number</label>
+            <input type="text" id="aadhar" name="aadhar" inputmode="numeric" pattern="[0-9]{12}" placeholder="12-digit" required>
+          </div>
+          <div>
+            <label for="photo" class="req">Passport-size photo</label>
+            <input type="file" id="photo" name="photo" accept="image/*" required>
+          </div>
+          <div>
+            <label for="idproof" class="req">ID proof (PDF/JPG)</label>
+            <input type="file" id="idproof" name="id_proof" accept=".pdf,image/*" required>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Consent</legend>
+        <div class="inline">
+          <label>
+            <input type="checkbox" name="agree_rules" required>
+            I confirm that the information provided is accurate and I agree to NCC recruitment rules.
+          </label>
+        </div>
+        <div class="inline">
+          <label>
+            <input type="checkbox" name="agree_contact" required>
+            I consent to being contacted via email/phone regarding NCC selection and training.
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Additional information</legend>
+        <label for="remarks">Remarks (optional)</label>
+        <textarea id="remarks" name="remarks" placeholder="Anything we should know (availability, constraints, achievements)…"></textarea>
+      </fieldset>
+
+      <div class="actions">
+        <button type="submit" class="primary">Submit application</button>
+        <button type="reset" class="secondary">Reset</button>
+      </div>
+      <p class="note">After submission, keep your email and phone accessible for further communication.</p>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 NCC Unit Recruitment</p>
+  </footer>
+</body>
+</html>
