@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anand Rai | Portfolio</title>
+  <style>
+    :root {
+      --bg: #f4f4f9;
+      --text: #333;
+      --primary: #0077cc;
+      --card-bg: #fff;
+      --muted: #777;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .tagline {
+      color: var(--muted);
+    }
+
+    /* Navbar */
+    .navbar {
+      background: var(--primary);
+    }
+    .navbar ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+    }
+    .navbar li {
+      margin: 0 15px;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    /* Card */
+    .card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Grid for projects */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .muted {
+      color: var(--muted);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar ul {
+        flex-direction: column;
+      }
+      .navbar li {
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="container">
+    <h1>Anand Rai</h1>
+    <p class="tagline">Aspiring AI Engineer | Web Developer | Problem Solver</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Section -->
+  <section id="about" class="container card">
+    <h2>About Me</h2>
+    <p>
+      I’m a B.Tech CSE (AI & ML) student passionate about building intelligent systems and semantic web projects. 
+      I love connecting technical skills with real-world impact.
+    </p>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container">
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>AI News Summarizer</h3>
+        <p>Fetches headlines and generates concise summaries using NLP models.</p>
+      </div>
+      <div class="card">
+        <h3>Delhi Pollution Dashboard</h3>
+        <p>Visualizes AQI data with charts and health advisories.</p>
+      </div>
+      <div class="card">
+        <h3>Heritage Showcase</h3>
+        <p>Highlights GI-tagged products like Kala Namak rice and Gorakhpur Terracotta.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container card">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:anand@example.com">anand@example.com</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/anandrai</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="container">
+    <p class="muted">© 2025 Anand Rai | Built with HTML & CSS</p>
+  </footer>
+</body>
+</html>
