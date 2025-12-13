@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pricing Table</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f4f4f4; }
+    header { text-align:center; padding:2rem; background:#333; color:#fff; }
+    .pricing {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 2rem;
+    }
+    .plan {
+      background:#fff;
+      border:1px solid #ccc;
+      border-radius:8px;
+      width:250px;
+      text-align:center;
+      padding:1.5rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .plan:hover {
+      transform: scale(1.05);
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    }
+    .plan h2 { margin-top:0; }
+    .price { font-size:2rem; color:#4a90e2; margin:1rem 0; }
+    ul { list-style:none; padding:0; }
+    li { margin:0.5rem 0; }
+    button {
+      margin-top:1rem;
+      padding:0.75rem 1.5rem;
+      background:#4a90e2;
+      color:#fff;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+    }
+    button:hover { background:#357ab8; }
+    footer { text-align:center; padding:1rem; background:#333; color:#fff; }
+    @media (max-width:600px) {
+      .pricing { flex-direction:column; align-items:center; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Our Pricing Plans</h1>
+    <p>Choose the plan that suits you best</p>
+  </header>
+
+  <main>
+    <section class="pricing">
+      <div class="plan">
+        <h2>Basic</h2>
+        <p class="price">₹499/mo</p>
+        <ul>
+          <li>✔ 5 Projects</li>
+          <li>✔ Email Support</li>
+          <li>✘ No Custom Domain</li>
+        </ul>
+        <button>Select</button>
+      </div>
+
+      <div class="plan">
+        <h2>Standard</h2>
+        <p class="price">₹999/mo</p>
+        <ul>
+          <li>✔ 15 Projects</li>
+          <li>✔ Priority Support</li>
+          <li>✔ Custom Domain</li>
+        </ul>
+        <button>Select</button>
+      </div>
+
+      <div class="plan">
+        <h2>Premium</h2>
+        <p class="price">₹1999/mo</p>
+        <ul>
+          <li>✔ Unlimited Projects</li>
+          <li>✔ 24/7 Support</li>
+          <li>✔ Custom Domain</li>
+        </ul>
+        <button>Select</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Pricing Table Demo</p>
+  </footer>
+</body>
+</html>
