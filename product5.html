@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Image Gallery</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; }
+    header { background:#333; color:#fff; text-align:center; padding:1rem; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+    .caption {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .gallery-item:hover .caption {
+      opacity: 1;
+    }
+    footer { background:#333; color:#fff; text-align:center; padding:1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My CSS Image Gallery</h1>
+    <p>Responsive grid with hover effects</p>
+  </header>
+
+  <main>
+    <section class="gallery">
+      <div class="gallery-item">
+        <img src="https://placekitten.com/400/300" alt="Kitten 1">
+        <div class="caption">Cute Kitten 1</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://placekitten.com/401/300" alt="Kitten 2">
+        <div class="caption">Cute Kitten 2</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://placekitten.com/402/300" alt="Kitten 3">
+        <div class="caption">Cute Kitten 3</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://placekitten.com/403/300" alt="Kitten 4">
+        <div class="caption">Cute Kitten 4</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 My Gallery</p>
+  </footer>
+</body>
+</html>
