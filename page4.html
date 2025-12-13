@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Product Grid</title>
+
+  <style>
+    .product-grid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.price {
+  font-weight: bold;
+  color: #2e7d32;
+  margin-top: 0.5rem;
+}
+
+
+@media (max-width: 600px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (min-width: 601px) and (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (min-width: 1025px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+
+  </style>
+</head>
+<body>
+  <section class="product-grid">
+    <article class="product-card">
+      <img src="placeholder.jpg" alt="Product 1 image">
+      <h2>Product 1</h2>
+      <p>High-quality item with great features.</p>
+      <p class="price">₹499</p>
+    </article>
+
+    <article class="product-card">
+      <img src="placeholder.jpg" alt="Product 2 image">
+      <h2>Product 2</h2>
+      <p>Durable and stylish for daily use.</p>
+      <p class="price">₹799</p>
+    </article>
+
+    <article class="product-card">
+      <img src="placeholder.jpg" alt="Product 3 image">
+      <h2>Product 3</h2>
+      <p>Li"Product 4 image">ghtweight and comfortable.</p>
+      <p class="price">₹1,299</p>
+    </article>
+
+    <article class="product-card">
+      <img src="placeholder.jpg" alt=
+      <h2>Product 4</h2>
+      <p>Trendy design with premium quality.</p>
+      <p class="price">₹999</p>
+    </article>
+  </section>
+</body>
+</html>
