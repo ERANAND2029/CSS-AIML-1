@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ShopEasy</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background: #f7f7f7;
+  }
+  .container {
+    width: 400px;
+    margin: auto;
+    border: 1px solid black;
+    background: white;
+  }
+  .header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;  
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .product-card {
+    width: 220px;
+    margin: 20px auto;
+    text-align: left;
+    font-size: 14px;
+  }
+  .product-image {
+    width: 220px;
+    height: 180px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 8px;
+  }
+  .product-title {
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .product-description {
+    color: #666;
+    margin-bottom: 8px;
+  }
+  .price {
+    color: #118d53;
+    font-weight: 700;
+    margin-right: 10px;
+  }
+  .old-price {
+    text-decoration: line-through;
+    color: grey;
+  }
+  .add-to-cart-btn {
+    width: 220px;
+    background-color: #0b57d0;
+    color: white;
+    border: none;
+    padding: 10px 0;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  .add-to-cart-btn:hover {
+    background-color: #0949a6;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">ShopEasy</div>
+  <div class="product-card">
+    <img
+      src="http://www.clipartbest.com/cliparts/yck/gA5/yckgA5qai.jpg"
+      alt="Classic Cotton T-Shirt"
+      class="product-image"
+    />
+    <div class="product-title">Classic Cotton T-Shirt</div>
+    <div class="product-description">Soft, breathable cotton. Regular fit. Available in multiple colors.</div>
+    <span class="price">&#8377;799</span>
+    <span class="old-price">&#8377;1,199</span>
+    <br />
+    <button class="add-to-cart-btn">Add to Cart</button>
+  </div>
+</div>
+
+</body>
+</html>
